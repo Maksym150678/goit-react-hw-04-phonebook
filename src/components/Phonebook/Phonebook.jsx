@@ -1,4 +1,4 @@
-import { useState, Component} from 'react';
+import { useState } from 'react';
 
 import { nanoid } from 'nanoid';
 
@@ -24,10 +24,10 @@ const Phonebook = () => {
   };
 
   const removeContact = (id) => {
-    setPhonebook(prevPhonebook => prevPhonebook.filter(item.id !== id));
+    setPhonebook(prevPhonebook => prevPhonebook.filter(item => item.id !== id));
   }
 
-  handleFilter = ({ target }) => {
+  const handleFilter = ({ target }) => {
     setFilter(target.value);
   };
 
@@ -38,10 +38,13 @@ const Phonebook = () => {
   }
 }
 
-getFilteredPhonebook = () => {
+const getFilteredPhonebook = () => {
   if (!filter) {
     return phonebook;
   }
+
+  const normalizedFilter = filter.toLowerCase;
+  
   const filteredPhonebook = getFilteredPhonebook();
 
     return (
