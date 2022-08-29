@@ -6,8 +6,6 @@ import { nanoid } from 'nanoid';
 module.id = nanoid(5);
 
 
-
-
 class FormAddPhonebook extends Component {
 
     static defaultProps = {
@@ -84,9 +82,9 @@ class FormAddPhonebook extends Component {
 
 export default FormAddPhonebook;
 
-// FormAddPhonebook.defaultProps = {
-//     onsubmit: () => {}
-//   }
+FormAddPhonebook.defaultProps = {
+    onsubmit: () => {}
+  }
 
 //   FormAddPhonebook.PropTypes = {
 //     onSubmit: PropTypes.func,

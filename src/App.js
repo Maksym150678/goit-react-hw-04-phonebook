@@ -4,7 +4,6 @@ import React from 'react';
 import { Component } from 'react';
 
 import { nanoid } from 'nanoid';
-
 import FormAddPhonebook from 'components/Phonebook/FormAddPhonebook/FormAddPhonebook';
 import PhonebookList from 'components/Phonebook/PhonebookList/PhonebookList';
 import styles from 'components/app.module.css';
