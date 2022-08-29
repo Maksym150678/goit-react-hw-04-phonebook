@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 import { nanoid } from 'nanoid';
 
@@ -7,8 +7,15 @@ import PhonebookList from './PhonebookList/PhonebookList';
 import styles from './phonebook.module.css';
 
 const Phonebook = () => {
-  const [phonebook, setPhonebook] = useState([]);
+  const [phonebook, setPhonebook] = useState(() => {
+    const value = JSON.parse(localStorage.getItem('phonebook'));
+    return value || [];
+  });
   const [filter, setFilter] = useState('');
+
+  useEffect(() => {
+    localStorage.setItem('phonebook', JSON.stringify(phonebook))
+  }, [phonebook])
 
   const addContact = (data) => {
     if(isDublicate(data)) {
